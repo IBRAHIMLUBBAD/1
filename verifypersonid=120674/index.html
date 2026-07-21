@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Egypt Visa</title>
+    
+    <!-- خط Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 15px;
+            direction: rtl;
+        }
+
+        /* الكارت الرئيسي */
+        .page-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 580px;
+            border-radius: 24px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 1. الشريط المتدرج والمتحرك بين الأزرق والأخضر */
+        .top-gradient-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #2563eb, #10b981, #2563eb);
+            background-size: 200% 200%;
+            animation: gradientWave 4s ease infinite;
+        }
+
+        /* أنيميشن التموج للشريط */
+        @keyframes gradientWave {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* اللوجو */
+        .logo-container {
+            margin-top: 5px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .custom-logo {
+            max-width: 110px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* العناوين */
+        .main-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .sub-title {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        /* حاوية البيانات الداخلية */
+        .data-card {
+            background-color: #f8fafc;
+            border-radius: 20px;
+            width: 100%;
+            padding: 24px 22px;
+            border: 1px solid #f1f5f9;
+        }
+
+        /* 2. رأس كارت البيانات: بيانات المسافر يمين - معتمد شمال */
+        .card-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .card-header-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        .badge-verified {
+            background-color: #dcfce7;
+            color: #10b981;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        /* 3. صفوف المعلومات: الأيقونة على اليمين والنص على اليسار */
+        .info-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* حاوية الأيقونة (على اليمين وبدون خلفية بيضاء) */
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .icon-box img {
+            display: block;
+            max-width: 44px;
+            max-height: 44px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* نصوص البيانات */
+        .info-content {
+            text-align: right;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 15px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        /* بنر مسموح بالصعود */
+        .boarding-banner {
+            background-color: #e6f4ea;
+            border-radius: 16px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        .boarding-text {
+            text-align: right;
+        }
+
+        .boarding-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #059669;
+            margin-bottom: 2px;
+        }
+
+        .boarding-sub {
+            font-size: 12px;
+            color: #34d399;
+        }
+
+        .boarding-check-icon img {
+            display: block;
+            max-width: 32px;
+            max-height: 32px;
+        }
+
+        /* الفوتر السفلي */
+        .page-footer {
+            margin-top: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .footer-icon {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-card">
+        <!-- الشريط المتدرج المتحرك -->
+        <div class="top-gradient-line"></div>
+
+        <!-- اللوجو الخاص بك -->
+        <div class="logo-container">
+            <img src="gallery/logo.svg" alt="Logo" class="custom-logo">
+        </div>
+
+        <!-- عناوين الصفحة -->
+        <h1 class="main-title">التحقق من صحة البرقية</h1>
+        <p class="sub-title">نتيجة التحقق من حالة البرقية</p>
+
+        <!-- كارت البيانات -->
+        <div class="data-card">
+            
+            <!-- الهيدر الداخلي (بيانات المسافر يمين - معتمد شمال) -->
+            <div class="card-header-flex">
+                <span class="card-header-title">بيانات المسافر</span>
+                <span class="badge-verified">مُعتمد</span>
+            </div>
+
+            <!-- اسم المسافر (الأيقونة أولاً على اليمين) -->
+            <div class="info-row">
+                <div class="icon-box">
+                    <img src="gallery/user.svg" alt="User">
+                </div>
+                <div class="info-content">
+                    <p class="info-label">اسم المسافر</p>
+                    <p class="info-value">Ahmed Mohammed Y Mukhaimar </p>
+                </div>
+            </div>
+
+            <!-- رقم جواز السفر -->
+            <div class="info-row">
+                <div class="icon-box">
+                    <img src="gallery/passport-icon.svg" alt="Passport">
+                </div>
+                <div class="info-content">
+                    <p class="info-label">رقم جواز السفر</p>
+                    <p class="info-value">TA2506792</p>
+                </div>
+            </div>
+
+            <!-- الجنسية -->
+            <div class="info-row">
+                <div class="icon-box">
+                    <img src="gallery/nationality-icon.svg" alt="Nationality">
+                </div>
+                <div class="info-content">
+                    <p class="info-label">الجنسية</p>
+                    <p class="info-value">فلسطينى</p>
+                </div>
+            </div>
+
+            <!-- تاريخ الوصول -->
+            <div class="info-row">
+                <div class="icon-box">
+                    <img src="gallery/date-icon.svg" alt="Date">
+                </div>
+                <div class="info-content">
+                    <p class="info-label">تاريخ الوصول</p>
+                    <p class="info-value">22/07/2026</p>
+                </div>
+            </div>
+
+            <!-- شركة الطيران / وسيلة النقل -->
+            <div class="info-row">
+                <div class="icon-box">
+                    <img src="gallery/airline-icon.svg" alt="Airline">
+                </div>
+                <div class="info-content">
+                    <p class="info-label">شركة الطيران / وسيلة النقل</p>
+                    <p class="info-value">الملكية الاردنية لطيران </p>
+                </div>
+            </div>
+
+            <!-- الوجهة -->
+            <div class="info-row">
+                <div class="icon-box">
+                    <img src="gallery/destination-icon.svg" alt="Destination">
+                </div>
+                <div class="info-content">
+                    <p class="info-label">الوجهة</p>
+                    <p class="info-value">بروكسيل</p>
+                </div>
+            </div>
+
+            <!-- رمز الرحلة -->
+            <div class="info-row">
+                <div class="icon-box">
+                    <img src="gallery/flight-code-icon.svg" alt="Flight Code">
+                </div>
+                <div class="info-content">
+                    <p class="info-label">رمز الرحلة</p>
+                    <p class="info-value">RJ 142</p>
+                </div>
+            </div>
+
+            <!-- بنر مسموح بالصعود -->
+			 
+            <div class="boarding-banner">
+                <div class="boarding-check-icon">
+                    <img src="gallery/check-icon.svg" alt="Check">
+                </div>
+                <div class="boarding-text">
+                    <p class="boarding-title">مسموح بالصعود</p>
+                    <p class="boarding-sub">تم اعتماد حالة الصعود بنجاح</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- الفوتر السفلي -->
+        <div class="page-footer">
+            <img src="gallery/footer-plane.svg" alt="Plane" class="footer-icon">
+            <span>نظام التحقق الإلكتروني — بوابة الموافقات المصرية</span>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
